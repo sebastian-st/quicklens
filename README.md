@@ -1,5 +1,3 @@
-# Main Page # {#mainpage}
-
 ![Logo](http://sebastian.stapelberg.de/documents/quicklens.jpg "Logo")
 
 # quicklens
