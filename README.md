@@ -43,6 +43,9 @@ Please note:
 
 Have fun!
 
+## Documentation
+
+The code itself is documented in "doc" (auto-generated using doxygen).
 
 ## Science FAQ
 
