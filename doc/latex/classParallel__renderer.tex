@@ -1,0 +1,117 @@
+\hypertarget{classParallel__renderer}{}\doxysection{Parallel\+\_\+renderer Class Reference}
+\label{classParallel__renderer}\index{Parallel\_renderer@{Parallel\_renderer}}
+
+
+Class for Open\+CV parallelization\+: Render the image produced by the lens on the given screen for the given source.  
+
+
+
+
+Inheritance diagram for Parallel\+\_\+renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classParallel__renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Parallel\+\_\+renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classParallel__renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParallel__renderer_aeee8681ddd1b0bec16ef33d35ebebb5c}{Parallel\+\_\+renderer}} (\mbox{\hyperlink{classscreenT}{screenT}} $\ast$std\+\_\+screen, bool mode)
+\item 
+virtual void \mbox{\hyperlink{classParallel__renderer_ac3794e982d95d7761e10d3ce135b0e42}{operator()}} (const cv\+::\+Range \&range) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscreenT}{screenT}} $\ast$ \mbox{\hyperlink{classParallel__renderer_a27bfff161cf834168b8cd0d83231f365}{screen}}
+\item 
+bool \mbox{\hyperlink{classParallel__renderer_ad23b75ade0dfe0d8a055ff50b10d3c26}{recompute\+\_\+lensed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for Open\+CV parallelization\+: Render the image produced by the lens on the given screen for the given source. 
+
+Definition at line 14 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParallel__renderer_aeee8681ddd1b0bec16ef33d35ebebb5c}\label{classParallel__renderer_aeee8681ddd1b0bec16ef33d35ebebb5c}} 
+\index{Parallel\_renderer@{Parallel\_renderer}!Parallel\_renderer@{Parallel\_renderer}}
+\index{Parallel\_renderer@{Parallel\_renderer}!Parallel\_renderer@{Parallel\_renderer}}
+\doxysubsubsection{\texorpdfstring{Parallel\_renderer()}{Parallel\_renderer()}}
+{\footnotesize\ttfamily Parallel\+\_\+renderer\+::\+Parallel\+\_\+renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classscreenT}{screenT}} $\ast$}]{std\+\_\+screen,  }\item[{bool}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em std\+\_\+screen} & Screen object referred to \\
+\hline
+{\em mode} & Drawing mode\+: Re-\/draw whole image? (rather than re-\/drawing only the overlays) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParallel__renderer_ac3794e982d95d7761e10d3ce135b0e42}\label{classParallel__renderer_ac3794e982d95d7761e10d3ce135b0e42}} 
+\index{Parallel\_renderer@{Parallel\_renderer}!operator()@{operator()}}
+\index{operator()@{operator()}!Parallel\_renderer@{Parallel\_renderer}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual void Parallel\+\_\+renderer\+::operator() (\begin{DoxyParamCaption}\item[{const cv\+::\+Range \&}]{range }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Define a relative y-\/coordinate with respect to the lens origin and specify the fall-\/off of alpha outside the defined lens area in y-\/dir.
+
+If CC val is 255 and if only the overlays shall be redrawn, we can set pixel directly to 255 and skip to next one, since CC is always on top.
+
+Add contribution of the CC contour image. Gray values can occur since contours are anti-\/aliased.
+
+Place rel\+\_\+j within bounds (result -\/$>$ safe\+\_\+j) and specify the fall-\/off of alpha outside the defined lens area in y-\/direction
+
+Compute lens eq. at pixel (j,i) to get target source pos. Then, get linearly interpolated source R\+GB value at target (beta1, beta2). Since the latter will in general lie between different source pixels, the interpolation is used to obtain the contributions at the particular coord. The function returns zero if beta is outside the area covered by the source.
+
+Get final image pixel as the sum of lensed image + overlay (unless the pixel belongs to a caustic, in which case it has already been set)
+
+Definition at line 27 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classParallel__renderer_ad23b75ade0dfe0d8a055ff50b10d3c26}\label{classParallel__renderer_ad23b75ade0dfe0d8a055ff50b10d3c26}} 
+\index{Parallel\_renderer@{Parallel\_renderer}!recompute\_lensed@{recompute\_lensed}}
+\index{recompute\_lensed@{recompute\_lensed}!Parallel\_renderer@{Parallel\_renderer}}
+\doxysubsubsection{\texorpdfstring{recompute\_lensed}{recompute\_lensed}}
+{\footnotesize\ttfamily bool Parallel\+\_\+renderer\+::recompute\+\_\+lensed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file renderer.\+cpp.
+
+\mbox{\Hypertarget{classParallel__renderer_a27bfff161cf834168b8cd0d83231f365}\label{classParallel__renderer_a27bfff161cf834168b8cd0d83231f365}} 
+\index{Parallel\_renderer@{Parallel\_renderer}!screen@{screen}}
+\index{screen@{screen}!Parallel\_renderer@{Parallel\_renderer}}
+\doxysubsubsection{\texorpdfstring{screen}{screen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscreenT}{screenT}}$\ast$ Parallel\+\_\+renderer\+::screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file renderer.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{renderer_8cpp}{renderer.\+cpp}}\end{DoxyCompactItemize}

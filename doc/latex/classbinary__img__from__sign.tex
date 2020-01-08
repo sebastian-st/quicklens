@@ -1,0 +1,107 @@
+\hypertarget{classbinary__img__from__sign}{}\doxysection{binary\+\_\+img\+\_\+from\+\_\+sign Class Reference}
+\label{classbinary__img__from__sign}\index{binary\_img\_from\_sign@{binary\_img\_from\_sign}}
+
+
+Class for Open\+CV parallelization\+: Compute binary map by taking the sign a 1-\/channel image ($<$ 0 yields \char`\"{}1\char`\"{})  
+
+
+
+
+Inheritance diagram for binary\+\_\+img\+\_\+from\+\_\+sign\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classbinary__img__from__sign__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for binary\+\_\+img\+\_\+from\+\_\+sign\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classbinary__img__from__sign__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbinary__img__from__sign_aee74a62071b129e505dc90dad6b90a83}{binary\+\_\+img\+\_\+from\+\_\+sign}} (Mat \&input, Mat \&output)
+\item 
+virtual void \mbox{\hyperlink{classbinary__img__from__sign_aa80443fda37e5ac41406251f110d91e3}{operator()}} (const cv\+::\+Range \&range) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Mat \& \mbox{\hyperlink{classbinary__img__from__sign_a8c38027d703417d1bfde3bf66c720d10}{in}}
+\item 
+Mat \& \mbox{\hyperlink{classbinary__img__from__sign_a5094e62a39fb7a3e4dddf8a11d6a8869}{out}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for Open\+CV parallelization\+: Compute binary map by taking the sign a 1-\/channel image ($<$ 0 yields \char`\"{}1\char`\"{}) 
+
+Definition at line 161 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbinary__img__from__sign_aee74a62071b129e505dc90dad6b90a83}\label{classbinary__img__from__sign_aee74a62071b129e505dc90dad6b90a83}} 
+\index{binary\_img\_from\_sign@{binary\_img\_from\_sign}!binary\_img\_from\_sign@{binary\_img\_from\_sign}}
+\index{binary\_img\_from\_sign@{binary\_img\_from\_sign}!binary\_img\_from\_sign@{binary\_img\_from\_sign}}
+\doxysubsubsection{\texorpdfstring{binary\_img\_from\_sign()}{binary\_img\_from\_sign()}}
+{\footnotesize\ttfamily binary\+\_\+img\+\_\+from\+\_\+sign\+::binary\+\_\+img\+\_\+from\+\_\+sign (\begin{DoxyParamCaption}\item[{Mat \&}]{input,  }\item[{Mat \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input} & Input Mat image (needs to be of type C\+V\+\_\+64F, i.\+e. double) \\
+\hline
+\mbox{\texttt{ out}}  & {\em output} & Output Mat image (returns C\+V\+\_\+8U, i.\+e. uchar) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 172 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbinary__img__from__sign_aa80443fda37e5ac41406251f110d91e3}\label{classbinary__img__from__sign_aa80443fda37e5ac41406251f110d91e3}} 
+\index{binary\_img\_from\_sign@{binary\_img\_from\_sign}!operator()@{operator()}}
+\index{operator()@{operator()}!binary\_img\_from\_sign@{binary\_img\_from\_sign}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual void binary\+\_\+img\+\_\+from\+\_\+sign\+::operator() (\begin{DoxyParamCaption}\item[{const cv\+::\+Range \&}]{range }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 174 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbinary__img__from__sign_a8c38027d703417d1bfde3bf66c720d10}\label{classbinary__img__from__sign_a8c38027d703417d1bfde3bf66c720d10}} 
+\index{binary\_img\_from\_sign@{binary\_img\_from\_sign}!in@{in}}
+\index{in@{in}!binary\_img\_from\_sign@{binary\_img\_from\_sign}}
+\doxysubsubsection{\texorpdfstring{in}{in}}
+{\footnotesize\ttfamily Mat\& binary\+\_\+img\+\_\+from\+\_\+sign\+::in\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 164 of file renderer.\+cpp.
+
+\mbox{\Hypertarget{classbinary__img__from__sign_a5094e62a39fb7a3e4dddf8a11d6a8869}\label{classbinary__img__from__sign_a5094e62a39fb7a3e4dddf8a11d6a8869}} 
+\index{binary\_img\_from\_sign@{binary\_img\_from\_sign}!out@{out}}
+\index{out@{out}!binary\_img\_from\_sign@{binary\_img\_from\_sign}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily Mat\& binary\+\_\+img\+\_\+from\+\_\+sign\+::out\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 165 of file renderer.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{renderer_8cpp}{renderer.\+cpp}}\end{DoxyCompactItemize}

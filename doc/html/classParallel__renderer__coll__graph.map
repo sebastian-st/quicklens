@@ -1,0 +1,8 @@
+<map id="Parallel_renderer" name="Parallel_renderer">
+<area shape="rect" id="node1" title="Class for OpenCV parallelization: Render the image produced by the lens on the given screen for the g..." alt="" coords="29,379,147,405"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,289,128,316"/>
+<area shape="rect" id="node3" href="$classscreenT.html" title="Class representing interactive screen on which the images are rendered, using OpenCV windows." alt="" coords="152,289,221,316"/>
+<area shape="rect" id="node4" href="$classlensT.html" title="Class implementing a gravitational lens, its physical properties and its screen geometry." alt="" coords="159,199,214,225"/>
+<area shape="rect" id="node5" title=" " alt="" coords="146,5,190,32"/>
+<area shape="rect" id="node6" href="$classsourceT.html" title="Class representing a source and its geometric properties on the screen." alt="" coords="239,199,308,225"/>
+</map>

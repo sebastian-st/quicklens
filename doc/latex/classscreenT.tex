@@ -1,0 +1,402 @@
+\hypertarget{classscreenT}{}\doxysection{screenT Class Reference}
+\label{classscreenT}\index{screenT@{screenT}}
+
+
+Class representing interactive screen on which the images are rendered, using Open\+CV windows.  
+
+
+
+
+{\ttfamily \#include $<$screen\+\_\+io.\+h$>$}
+
+
+
+Collaboration diagram for screenT\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classscreenT__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscreenT_a47bafa450b8aee522a6d1d587d4518f2}{screenT}} (const char $\ast$title, int w, int h, int resize\+\_\+w, int resize\+\_\+h, \mbox{\hyperlink{classlensT}{lensT}} \&l, \mbox{\hyperlink{classsourceT}{sourceT}} \&s)
+\item 
+void \mbox{\hyperlink{classscreenT_a6c5bd88a01ca331de36d3747ac44b519}{render\+\_\+lensed\+\_\+image}} (bool redraw\+\_\+overlay\+\_\+only=false)
+\item 
+void \mbox{\hyperlink{classscreenT_a54e53ba506cf5c891f5d3febdb967402}{refresh}} (bool redraw\+\_\+overlay\+\_\+only=false)
+\item 
+int \mbox{\hyperlink{classscreenT_a9ed979ee01058eb159ed565d4387cc4c}{clear\+\_\+msg\+\_\+display}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classscreenT_a4ce09fb5beb5be371768be988bb4dc2f}{handle\+\_\+mouse\+\_\+input}} (int sig, int target\+\_\+x, int target\+\_\+y, int, void $\ast$std\+\_\+scr)
+\item 
+static void \mbox{\hyperlink{classscreenT_a3576dc9be8bf3cdd14fe465e736311d4}{reapply\+\_\+weight}} (int, void $\ast$std\+\_\+scr)
+\item 
+static void \mbox{\hyperlink{classscreenT_a0a7fb0b95e81212d0be9416ec10fbada}{update\+\_\+overlays}} (int, void $\ast$std\+\_\+scr)
+\item 
+static void \mbox{\hyperlink{classscreenT_a478de7c574b8d3860dcbbcd78a73f4f8}{resize\+\_\+source}} (int, void $\ast$std\+\_\+screen)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classscreenT_a0810312319cc558bd97afeff3740b941}{max\+\_\+w}} = 0
+\item 
+int \mbox{\hyperlink{classscreenT_ae562cfe630c115b6e5cc6f48b14301f5}{max\+\_\+h}} = 0
+\item 
+const char $\ast$ \mbox{\hyperlink{classscreenT_aaf1db5b42c10372686ccddd4f8fc629c}{win}}
+\item 
+\mbox{\hyperlink{classlensT}{lensT}} \& \mbox{\hyperlink{classscreenT_a4804cddb4c77eee229e710904d034751}{lens}}
+\item 
+\mbox{\hyperlink{classsourceT}{sourceT}} \& \mbox{\hyperlink{classscreenT_a8bb990bbfe7204a3cd341c7beb3219bc}{src}}
+\item 
+Mat \mbox{\hyperlink{classscreenT_a72455e1d3f63248df1531a75e3d8aa47}{lensed\+R\+GB}}
+\item 
+Mat \mbox{\hyperlink{classscreenT_ab852acc983b0395733c007d3cf4a8ab2}{final\+R\+GB}}
+\item 
+bool \mbox{\hyperlink{classscreenT_aa7339b92c6e3830155eff9abfda3fe45}{mouse\+\_\+lbutton\+\_\+down}} = false
+\item 
+int \mbox{\hyperlink{classscreenT_a7f9b48f04c20eb0039cc96a0575eb098}{weight\+\_\+int}} = 100
+\item 
+int \mbox{\hyperlink{classscreenT_a0324cd138bd10b5f383daf981f49452d}{source\+\_\+size}} = 100
+\item 
+int \mbox{\hyperlink{classscreenT_a744fad9e811d230c6a91b53783ee3ff7}{overlay\+\_\+mode}} = 1
+\item 
+bool \mbox{\hyperlink{classscreenT_a9c04f4ab0210ad4ba9d050519fb2bdc3}{redraw\+\_\+cc\+\_\+on\+\_\+next\+\_\+action}} = true
+\item 
+bool \mbox{\hyperlink{classscreenT_aaf43099380b95e1bb377bbe0da2486a2}{cc\+\_\+radial}} = false
+\item 
+std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::steady\+\_\+clock $>$ \mbox{\hyperlink{classscreenT_aa3e8f6bdbdfebabfa308dac53ca8f62b}{clock\+\_\+start}}
+\item 
+std\+::string \mbox{\hyperlink{classscreenT_ad6cb5407b27a843a3d4ef609321c4f0a}{current\+\_\+text}} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscreenT_ae381347dc5f968c3e3a90941151c094e}{Parallel\+\_\+renderer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing interactive screen on which the images are rendered, using Open\+CV windows. 
+
+Definition at line 13 of file screen\+\_\+io.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscreenT_a47bafa450b8aee522a6d1d587d4518f2}\label{classscreenT_a47bafa450b8aee522a6d1d587d4518f2}} 
+\index{screenT@{screenT}!screenT@{screenT}}
+\index{screenT@{screenT}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{screenT()}{screenT()}}
+{\footnotesize\ttfamily screen\+T\+::screenT (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{resize\+\_\+w,  }\item[{int}]{resize\+\_\+h,  }\item[{\mbox{\hyperlink{classlensT}{lensT}} \&}]{l,  }\item[{\mbox{\hyperlink{classsourceT}{sourceT}} \&}]{s }\end{DoxyParamCaption})}
+
+Constructor\+: Create window with screen and trackbars
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Window name for Open\+CV \\
+\hline
+{\em w} & Screen width \\
+\hline
+{\em h} & Screen height \\
+\hline
+{\em resize\+\_\+w} & Resize window to a fix value independent of screen width \\
+\hline
+{\em resize\+\_\+h} & Resize window to a fix value independent of screen height \\
+\hline
+{\em l} & Lens object to use for rendering \\
+\hline
+{\em s} & Source object to be displayed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file screen\+\_\+io.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscreenT_a9ed979ee01058eb159ed565d4387cc4c}\label{classscreenT_a9ed979ee01058eb159ed565d4387cc4c}} 
+\index{screenT@{screenT}!clear\_msg\_display@{clear\_msg\_display}}
+\index{clear\_msg\_display@{clear\_msg\_display}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{clear\_msg\_display()}{clear\_msg\_display()}}
+{\footnotesize\ttfamily int screen\+T\+::clear\+\_\+msg\+\_\+display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear the message display on the screen if sufficient time has passed. 
+
+Definition at line 174 of file screen\+\_\+io.\+cpp.
+
+\mbox{\Hypertarget{classscreenT_a4ce09fb5beb5be371768be988bb4dc2f}\label{classscreenT_a4ce09fb5beb5be371768be988bb4dc2f}} 
+\index{screenT@{screenT}!handle\_mouse\_input@{handle\_mouse\_input}}
+\index{handle\_mouse\_input@{handle\_mouse\_input}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{handle\_mouse\_input()}{handle\_mouse\_input()}}
+{\footnotesize\ttfamily void screen\+T\+::handle\+\_\+mouse\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{sig,  }\item[{int}]{target\+\_\+x,  }\item[{int}]{target\+\_\+y,  }\item[{int}]{,  }\item[{void $\ast$}]{std\+\_\+scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Signal handler for mouse events
+
+
+\begin{DoxyParams}{Parameters}
+{\em sig} & Type of event (Open\+CV) \\
+\hline
+{\em target\+\_\+x} & X position of mouse click \\
+\hline
+{\em target\+\_\+y} & Y position of mouse click \\
+\hline
+{\em std\+\_\+scr} & Specific screen object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file screen\+\_\+io.\+cpp.
+
+\mbox{\Hypertarget{classscreenT_a3576dc9be8bf3cdd14fe465e736311d4}\label{classscreenT_a3576dc9be8bf3cdd14fe465e736311d4}} 
+\index{screenT@{screenT}!reapply\_weight@{reapply\_weight}}
+\index{reapply\_weight@{reapply\_weight}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{reapply\_weight()}{reapply\_weight()}}
+{\footnotesize\ttfamily void screen\+T\+::reapply\+\_\+weight (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{void $\ast$}]{std\+\_\+scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Re-\/apply lens weight, recompute and re-\/draw the resulting critical curves. (Only requires applying a scaling factor to the pre-\/computed derivatives of psi) 
+\begin{DoxyParams}{Parameters}
+{\em std\+\_\+scr} & Specific screen object\\
+\hline
+\end{DoxyParams}
+Re-\/apply weight to the lens displayed on this screen, recompute and re-\/draw the resulting critical curves. (Only requires a scaling factor to be applied to pre-\/computed derivatives of psi) 
+
+Definition at line 113 of file screen\+\_\+io.\+cpp.
+
+\mbox{\Hypertarget{classscreenT_a54e53ba506cf5c891f5d3febdb967402}\label{classscreenT_a54e53ba506cf5c891f5d3febdb967402}} 
+\index{screenT@{screenT}!refresh@{refresh}}
+\index{refresh@{refresh}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}}
+{\footnotesize\ttfamily void screen\+T\+::refresh (\begin{DoxyParamCaption}\item[{bool}]{redraw\+\_\+overlay\+\_\+only = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Refresh image on screen (e.\+g. re-\/render and show image) 
+\begin{DoxyParams}{Parameters}
+{\em redraw\+\_\+overlay\+\_\+only} & Re-\/draw only overlays? (I.\+e. re-\/use previous lensed image) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file screen\+\_\+io.\+cpp.
+
+\mbox{\Hypertarget{classscreenT_a6c5bd88a01ca331de36d3747ac44b519}\label{classscreenT_a6c5bd88a01ca331de36d3747ac44b519}} 
+\index{screenT@{screenT}!render\_lensed\_image@{render\_lensed\_image}}
+\index{render\_lensed\_image@{render\_lensed\_image}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{render\_lensed\_image()}{render\_lensed\_image()}}
+{\footnotesize\ttfamily void screen\+T\+::render\+\_\+lensed\+\_\+image (\begin{DoxyParamCaption}\item[{bool}]{redraw\+\_\+overlay\+\_\+only = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Compute and render lensed image 
+\begin{DoxyParams}{Parameters}
+{\em redraw\+\_\+overlay\+\_\+only} & Re-\/draw only overlays? (I.\+e. re-\/use previous lensed image) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file screen\+\_\+io.\+cpp.
+
+\mbox{\Hypertarget{classscreenT_a478de7c574b8d3860dcbbcd78a73f4f8}\label{classscreenT_a478de7c574b8d3860dcbbcd78a73f4f8}} 
+\index{screenT@{screenT}!resize\_source@{resize\_source}}
+\index{resize\_source@{resize\_source}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{resize\_source()}{resize\_source()}}
+{\footnotesize\ttfamily void screen\+T\+::resize\+\_\+source (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{void $\ast$}]{std\+\_\+screen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Change angular size of source and update image on screen 
+\begin{DoxyParams}{Parameters}
+{\em std\+\_\+screen} & Specific screen object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file screen\+\_\+io.\+cpp.
+
+\mbox{\Hypertarget{classscreenT_a0a7fb0b95e81212d0be9416ec10fbada}\label{classscreenT_a0a7fb0b95e81212d0be9416ec10fbada}} 
+\index{screenT@{screenT}!update\_overlays@{update\_overlays}}
+\index{update\_overlays@{update\_overlays}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{update\_overlays()}{update\_overlays()}}
+{\footnotesize\ttfamily void screen\+T\+::update\+\_\+overlays (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{void $\ast$}]{std\+\_\+scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Refresh the overlays for critical curves, caustics or kappa. Don\textquotesingle{}t re-\/render the lensed image. 
+\begin{DoxyParams}{Parameters}
+{\em std\+\_\+scr} & Specific screen object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file screen\+\_\+io.\+cpp.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classscreenT_ae381347dc5f968c3e3a90941151c094e}\label{classscreenT_ae381347dc5f968c3e3a90941151c094e}} 
+\index{screenT@{screenT}!Parallel\_renderer@{Parallel\_renderer}}
+\index{Parallel\_renderer@{Parallel\_renderer}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{Parallel\_renderer}{Parallel\_renderer}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classParallel__renderer}{Parallel\+\_\+renderer}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 38 of file screen\+\_\+io.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classscreenT_aaf43099380b95e1bb377bbe0da2486a2}\label{classscreenT_aaf43099380b95e1bb377bbe0da2486a2}} 
+\index{screenT@{screenT}!cc\_radial@{cc\_radial}}
+\index{cc\_radial@{cc\_radial}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{cc\_radial}{cc\_radial}}
+{\footnotesize\ttfamily bool screen\+T\+::cc\+\_\+radial = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_aa3e8f6bdbdfebabfa308dac53ca8f62b}\label{classscreenT_aa3e8f6bdbdfebabfa308dac53ca8f62b}} 
+\index{screenT@{screenT}!clock\_start@{clock\_start}}
+\index{clock\_start@{clock\_start}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{clock\_start}{clock\_start}}
+{\footnotesize\ttfamily std\+::chrono\+::time\+\_\+point$<$std\+::chrono\+::steady\+\_\+clock$>$ screen\+T\+::clock\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_ad6cb5407b27a843a3d4ef609321c4f0a}\label{classscreenT_ad6cb5407b27a843a3d4ef609321c4f0a}} 
+\index{screenT@{screenT}!current\_text@{current\_text}}
+\index{current\_text@{current\_text}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{current\_text}{current\_text}}
+{\footnotesize\ttfamily std\+::string screen\+T\+::current\+\_\+text = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_ab852acc983b0395733c007d3cf4a8ab2}\label{classscreenT_ab852acc983b0395733c007d3cf4a8ab2}} 
+\index{screenT@{screenT}!finalRGB@{finalRGB}}
+\index{finalRGB@{finalRGB}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{finalRGB}{finalRGB}}
+{\footnotesize\ttfamily Mat screen\+T\+::final\+R\+GB\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a4804cddb4c77eee229e710904d034751}\label{classscreenT_a4804cddb4c77eee229e710904d034751}} 
+\index{screenT@{screenT}!lens@{lens}}
+\index{lens@{lens}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{lens}{lens}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlensT}{lensT}}\& screen\+T\+::lens\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a72455e1d3f63248df1531a75e3d8aa47}\label{classscreenT_a72455e1d3f63248df1531a75e3d8aa47}} 
+\index{screenT@{screenT}!lensedRGB@{lensedRGB}}
+\index{lensedRGB@{lensedRGB}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{lensedRGB}{lensedRGB}}
+{\footnotesize\ttfamily Mat screen\+T\+::lensed\+R\+GB\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_ae562cfe630c115b6e5cc6f48b14301f5}\label{classscreenT_ae562cfe630c115b6e5cc6f48b14301f5}} 
+\index{screenT@{screenT}!max\_h@{max\_h}}
+\index{max\_h@{max\_h}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{max\_h}{max\_h}}
+{\footnotesize\ttfamily int screen\+T\+::max\+\_\+h = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a0810312319cc558bd97afeff3740b941}\label{classscreenT_a0810312319cc558bd97afeff3740b941}} 
+\index{screenT@{screenT}!max\_w@{max\_w}}
+\index{max\_w@{max\_w}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{max\_w}{max\_w}}
+{\footnotesize\ttfamily int screen\+T\+::max\+\_\+w = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_aa7339b92c6e3830155eff9abfda3fe45}\label{classscreenT_aa7339b92c6e3830155eff9abfda3fe45}} 
+\index{screenT@{screenT}!mouse\_lbutton\_down@{mouse\_lbutton\_down}}
+\index{mouse\_lbutton\_down@{mouse\_lbutton\_down}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{mouse\_lbutton\_down}{mouse\_lbutton\_down}}
+{\footnotesize\ttfamily bool screen\+T\+::mouse\+\_\+lbutton\+\_\+down = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a744fad9e811d230c6a91b53783ee3ff7}\label{classscreenT_a744fad9e811d230c6a91b53783ee3ff7}} 
+\index{screenT@{screenT}!overlay\_mode@{overlay\_mode}}
+\index{overlay\_mode@{overlay\_mode}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{overlay\_mode}{overlay\_mode}}
+{\footnotesize\ttfamily int screen\+T\+::overlay\+\_\+mode = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a9c04f4ab0210ad4ba9d050519fb2bdc3}\label{classscreenT_a9c04f4ab0210ad4ba9d050519fb2bdc3}} 
+\index{screenT@{screenT}!redraw\_cc\_on\_next\_action@{redraw\_cc\_on\_next\_action}}
+\index{redraw\_cc\_on\_next\_action@{redraw\_cc\_on\_next\_action}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{redraw\_cc\_on\_next\_action}{redraw\_cc\_on\_next\_action}}
+{\footnotesize\ttfamily bool screen\+T\+::redraw\+\_\+cc\+\_\+on\+\_\+next\+\_\+action = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a0324cd138bd10b5f383daf981f49452d}\label{classscreenT_a0324cd138bd10b5f383daf981f49452d}} 
+\index{screenT@{screenT}!source\_size@{source\_size}}
+\index{source\_size@{source\_size}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{source\_size}{source\_size}}
+{\footnotesize\ttfamily int screen\+T\+::source\+\_\+size = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a8bb990bbfe7204a3cd341c7beb3219bc}\label{classscreenT_a8bb990bbfe7204a3cd341c7beb3219bc}} 
+\index{screenT@{screenT}!src@{src}}
+\index{src@{src}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{src}{src}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsourceT}{sourceT}}\& screen\+T\+::src\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_a7f9b48f04c20eb0039cc96a0575eb098}\label{classscreenT_a7f9b48f04c20eb0039cc96a0575eb098}} 
+\index{screenT@{screenT}!weight\_int@{weight\_int}}
+\index{weight\_int@{weight\_int}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{weight\_int}{weight\_int}}
+{\footnotesize\ttfamily int screen\+T\+::weight\+\_\+int = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file screen\+\_\+io.\+h.
+
+\mbox{\Hypertarget{classscreenT_aaf1db5b42c10372686ccddd4f8fc629c}\label{classscreenT_aaf1db5b42c10372686ccddd4f8fc629c}} 
+\index{screenT@{screenT}!win@{win}}
+\index{win@{win}!screenT@{screenT}}
+\doxysubsubsection{\texorpdfstring{win}{win}}
+{\footnotesize\ttfamily const char$\ast$ screen\+T\+::win\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file screen\+\_\+io.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{screen__io_8h}{screen\+\_\+io.\+h}}\item 
+src/\mbox{\hyperlink{screen__io_8cpp}{screen\+\_\+io.\+cpp}}\end{DoxyCompactItemize}

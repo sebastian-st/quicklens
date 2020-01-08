@@ -1,0 +1,313 @@
+\hypertarget{classsourceT}{}\doxysection{sourceT Class Reference}
+\label{classsourceT}\index{sourceT@{sourceT}}
+
+
+Class representing a source and its geometric properties on the screen.  
+
+
+
+
+{\ttfamily \#include $<$lens.\+h$>$}
+
+
+
+Collaboration diagram for sourceT\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classsourceT__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsourceT_a15e0b1ca0474e5ad45d35335e52304a0}{sourceT}} (Mat \&image\+R\+G\+B\+\_\+, int x\+\_\+pos, int y\+\_\+pos)
+\item 
+void \mbox{\hyperlink{classsourceT_a1fe169a7c251395c8b3d7c7cd810bbc4}{move}} (int x\+\_\+pos, int y\+\_\+pos)
+\item 
+int \mbox{\hyperlink{classsourceT_aa5df81e77d5ee8bfdb401e8d4f66c737}{get\+\_\+width}} ()
+\item 
+int \mbox{\hyperlink{classsourceT_a243d6b271c9cf34bb5e97806d37173cb}{get\+\_\+height}} ()
+\item 
+const int $\ast$ \mbox{\hyperlink{classsourceT_a3019fd4fa89d526cda57142bf01da203}{get\+\_\+origin}} ()
+\item 
+const int $\ast$ \mbox{\hyperlink{classsourceT_a1a164a4375b8d0a1011dd045fb508c34}{get\+\_\+pos}} ()
+\item 
+Mat(\& \mbox{\hyperlink{classsourceT_a356e952ffde5870788b0bef79d92d00f}{get\+\_\+img}} ())\mbox{[}3\mbox{]}
+\item 
+void \mbox{\hyperlink{classsourceT_a9735a1bd966928e79904b228b71e9a1b}{resize\+\_\+area}} (double factor)
+\item 
+bool \mbox{\hyperlink{classsourceT_a125fff2cdd1f51dbc1f7753c6214370d}{contains}} (double x\+\_\+, double y\+\_\+)
+\item 
+cv\+::\+Vec3b \mbox{\hyperlink{classsourceT_a95946e9d7291ff01d8dae42d45e80f07}{get\+\_\+linear\+\_\+interpolated\+\_\+pixel}} (double beta1, double beta2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classsourceT_a7b4eff7679befd09d1f8d3ce55869371}{origin}} \mbox{[}2\mbox{]} = \{0, 0\}
+\item 
+int \mbox{\hyperlink{classsourceT_abecc2f6ed4878a93cf68ba32ca1b00eb}{pos}} \mbox{[}2\mbox{]} = \{0, 0\}
+\item 
+int \mbox{\hyperlink{classsourceT_ad82971711fb96a7f447c3e76ec13bb09}{end\+\_\+points}} \mbox{[}2\mbox{]} = \{0, 0\}
+\item 
+int \mbox{\hyperlink{classsourceT_a70ffba2fe8d2690a21dd366708e7df66}{w}}
+\item 
+int \mbox{\hyperlink{classsourceT_afdcc1928fb6e178dbb00a728872733d1}{h}}
+\item 
+Mat \mbox{\hyperlink{classsourceT_a0adac4a6d038631345ef46e23ac5b6d7}{image\+R\+GB}}
+\item 
+Mat \mbox{\hyperlink{classsourceT_a079e3b6553d826a89e00412eeb2f3af3}{channels}} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a source and its geometric properties on the screen. 
+
+Definition at line 138 of file lens.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsourceT_a15e0b1ca0474e5ad45d35335e52304a0}\label{classsourceT_a15e0b1ca0474e5ad45d35335e52304a0}} 
+\index{sourceT@{sourceT}!sourceT@{sourceT}}
+\index{sourceT@{sourceT}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{sourceT()}{sourceT()}}
+{\footnotesize\ttfamily source\+T\+::sourceT (\begin{DoxyParamCaption}\item[{Mat \&}]{image\+R\+G\+B\+\_\+,  }\item[{int}]{x\+\_\+pos,  }\item[{int}]{y\+\_\+pos }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+R\+G\+B\+\_\+} & Input R\+GB composite image of the source to be lensed \\
+\hline
+{\em x\+\_\+pos} & Lens center x pixel coordinate \\
+\hline
+{\em y\+\_\+pos} & Lens center y pixel coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file lens.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsourceT_a125fff2cdd1f51dbc1f7753c6214370d}\label{classsourceT_a125fff2cdd1f51dbc1f7753c6214370d}} 
+\index{sourceT@{sourceT}!contains@{contains}}
+\index{contains@{contains}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool source\+T\+::contains (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+,  }\item[{double}]{y\+\_\+ }\end{DoxyParamCaption})}
+
+Check if coordinate lies within area covered by source pixel data
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+} & X-\/coordinate \\
+\hline
+{\em y\+\_\+} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 305 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a243d6b271c9cf34bb5e97806d37173cb}\label{classsourceT_a243d6b271c9cf34bb5e97806d37173cb}} 
+\index{sourceT@{sourceT}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily int source\+T\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get current height of the non-\/lensed source image in px \begin{DoxyReturn}{Returns}
+Current height 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a356e952ffde5870788b0bef79d92d00f}\label{classsourceT_a356e952ffde5870788b0bef79d92d00f}} 
+\index{sourceT@{sourceT}!get\_img@{get\_img}}
+\index{get\_img@{get\_img}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{get\_img()}{get\_img()}}
+{\footnotesize\ttfamily Mat(\& source\+T\+::get\+\_\+img (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}3\mbox{]}}
+
+Return reference to the source image channels \begin{DoxyReturn}{Returns}
+Array of Mat objects (R,G,B) 
+\end{DoxyReturn}
+
+
+Definition at line 278 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a95946e9d7291ff01d8dae42d45e80f07}\label{classsourceT_a95946e9d7291ff01d8dae42d45e80f07}} 
+\index{sourceT@{sourceT}!get\_linear\_interpolated\_pixel@{get\_linear\_interpolated\_pixel}}
+\index{get\_linear\_interpolated\_pixel@{get\_linear\_interpolated\_pixel}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{get\_linear\_interpolated\_pixel()}{get\_linear\_interpolated\_pixel()}}
+{\footnotesize\ttfamily cv\+::\+Vec3b source\+T\+::get\+\_\+linear\+\_\+interpolated\+\_\+pixel (\begin{DoxyParamCaption}\item[{double}]{beta1,  }\item[{double}]{beta2 }\end{DoxyParamCaption})}
+
+Get pixel at given coordinate, applying linear interpolation between neighboring pixels
+
+
+\begin{DoxyParams}{Parameters}
+{\em beta1} & Input x coordinate \\
+\hline
+{\em beta2} & Input y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value at (beta1, beta2) computed from the nearest neighbors (R\+GB value)
+\end{DoxyReturn}
+Return source pixel at the given coordinate, using linear interpolation between neighboring pixels to obtain the contributions at a particular coordinate (which in general will lie between different pixels). 
+
+Definition at line 317 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a3019fd4fa89d526cda57142bf01da203}\label{classsourceT_a3019fd4fa89d526cda57142bf01da203}} 
+\index{sourceT@{sourceT}!get\_origin@{get\_origin}}
+\index{get\_origin@{get\_origin}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{get\_origin()}{get\_origin()}}
+{\footnotesize\ttfamily const int $\ast$ source\+T\+::get\+\_\+origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get origin of the area covered by the (non-\/lensed) source on the sky \begin{DoxyReturn}{Returns}
+Origin (x,y) coordinates 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a1a164a4375b8d0a1011dd045fb508c34}\label{classsourceT_a1a164a4375b8d0a1011dd045fb508c34}} 
+\index{sourceT@{sourceT}!get\_pos@{get\_pos}}
+\index{get\_pos@{get\_pos}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{get\_pos()}{get\_pos()}}
+{\footnotesize\ttfamily const int $\ast$ source\+T\+::get\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get current position of the source center \begin{DoxyReturn}{Returns}
+Source center (x,y) coordinates 
+\end{DoxyReturn}
+
+
+Definition at line 272 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_aa5df81e77d5ee8bfdb401e8d4f66c737}\label{classsourceT_aa5df81e77d5ee8bfdb401e8d4f66c737}} 
+\index{sourceT@{sourceT}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily int source\+T\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get current width of the non-\/lensed source image in px \begin{DoxyReturn}{Returns}
+Current width 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a1fe169a7c251395c8b3d7c7cd810bbc4}\label{classsourceT_a1fe169a7c251395c8b3d7c7cd810bbc4}} 
+\index{sourceT@{sourceT}!move@{move}}
+\index{move@{move}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void source\+T\+::move (\begin{DoxyParamCaption}\item[{int}]{x\+\_\+pos,  }\item[{int}]{y\+\_\+pos }\end{DoxyParamCaption})}
+
+Move source center + update origin according to size (requires w,h to be set)
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+pos} & Lens center (new) x pixel coordinate \\
+\hline
+{\em y\+\_\+pos} & Lens center (new) y pixel coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 243 of file lens.\+cpp.
+
+\mbox{\Hypertarget{classsourceT_a9735a1bd966928e79904b228b71e9a1b}\label{classsourceT_a9735a1bd966928e79904b228b71e9a1b}} 
+\index{sourceT@{sourceT}!resize\_area@{resize\_area}}
+\index{resize\_area@{resize\_area}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{resize\_area()}{resize\_area()}}
+{\footnotesize\ttfamily void source\+T\+::resize\+\_\+area (\begin{DoxyParamCaption}\item[{double}]{factor }\end{DoxyParamCaption})}
+
+Resize source (keep original \char`\"{}image\+R\+G\+B\char`\"{}; store re-\/scaled version in \char`\"{}image\char`\"{}) 
+\begin{DoxyParams}{Parameters}
+{\em factor} & Factor by which the angular size of the source is resized \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 284 of file lens.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsourceT_a079e3b6553d826a89e00412eeb2f3af3}\label{classsourceT_a079e3b6553d826a89e00412eeb2f3af3}} 
+\index{sourceT@{sourceT}!channels@{channels}}
+\index{channels@{channels}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily Mat source\+T\+::channels\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 148 of file lens.\+h.
+
+\mbox{\Hypertarget{classsourceT_ad82971711fb96a7f447c3e76ec13bb09}\label{classsourceT_ad82971711fb96a7f447c3e76ec13bb09}} 
+\index{sourceT@{sourceT}!end\_points@{end\_points}}
+\index{end\_points@{end\_points}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{end\_points}{end\_points}}
+{\footnotesize\ttfamily int source\+T\+::end\+\_\+points\mbox{[}2\mbox{]} = \{0, 0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 144 of file lens.\+h.
+
+\mbox{\Hypertarget{classsourceT_afdcc1928fb6e178dbb00a728872733d1}\label{classsourceT_afdcc1928fb6e178dbb00a728872733d1}} 
+\index{sourceT@{sourceT}!h@{h}}
+\index{h@{h}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily int source\+T\+::h\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 145 of file lens.\+h.
+
+\mbox{\Hypertarget{classsourceT_a0adac4a6d038631345ef46e23ac5b6d7}\label{classsourceT_a0adac4a6d038631345ef46e23ac5b6d7}} 
+\index{sourceT@{sourceT}!imageRGB@{imageRGB}}
+\index{imageRGB@{imageRGB}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{imageRGB}{imageRGB}}
+{\footnotesize\ttfamily Mat source\+T\+::image\+R\+GB\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 148 of file lens.\+h.
+
+\mbox{\Hypertarget{classsourceT_a7b4eff7679befd09d1f8d3ce55869371}\label{classsourceT_a7b4eff7679befd09d1f8d3ce55869371}} 
+\index{sourceT@{sourceT}!origin@{origin}}
+\index{origin@{origin}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily int source\+T\+::origin\mbox{[}2\mbox{]} = \{0, 0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 142 of file lens.\+h.
+
+\mbox{\Hypertarget{classsourceT_abecc2f6ed4878a93cf68ba32ca1b00eb}\label{classsourceT_abecc2f6ed4878a93cf68ba32ca1b00eb}} 
+\index{sourceT@{sourceT}!pos@{pos}}
+\index{pos@{pos}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily int source\+T\+::pos\mbox{[}2\mbox{]} = \{0, 0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 143 of file lens.\+h.
+
+\mbox{\Hypertarget{classsourceT_a70ffba2fe8d2690a21dd366708e7df66}\label{classsourceT_a70ffba2fe8d2690a21dd366708e7df66}} 
+\index{sourceT@{sourceT}!w@{w}}
+\index{w@{w}!sourceT@{sourceT}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily int source\+T\+::w\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 145 of file lens.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{lens_8h}{lens.\+h}}\item 
+src/\mbox{\hyperlink{lens_8cpp}{lens.\+cpp}}\end{DoxyCompactItemize}

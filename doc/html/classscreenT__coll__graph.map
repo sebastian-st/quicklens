@@ -1,0 +1,6 @@
+<map id="screenT" name="screenT">
+<area shape="rect" id="node1" title="Class representing interactive screen on which the images are rendered, using OpenCV windows." alt="" coords="93,289,162,316"/>
+<area shape="rect" id="node2" href="$classlensT.html" title="Class implementing a gravitational lens, its physical properties and its screen geometry." alt="" coords="100,199,155,225"/>
+<area shape="rect" id="node3" title=" " alt="" coords="87,5,131,32"/>
+<area shape="rect" id="node4" href="$classsourceT.html" title="Class representing a source and its geometric properties on the screen." alt="" coords="179,199,249,225"/>
+</map>

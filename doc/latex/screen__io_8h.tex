@@ -1,0 +1,49 @@
+\hypertarget{screen__io_8h}{}\doxysection{src/screen\+\_\+io.h File Reference}
+\label{screen__io_8h}\index{src/screen\_io.h@{src/screen\_io.h}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}lens.\+h\char`\"{}}\newline
+Include dependency graph for screen\+\_\+io.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{screen__io_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{screen__io_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classscreenT}{screenT}}
+\begin{DoxyCompactList}\small\item\em Class representing interactive screen on which the images are rendered, using Open\+CV windows. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{screen__io_8h_aaf693ea7543a226d961723b9edc66f65}{readmap}} (std\+::string filename, Mat \&cv\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Function for importing $\ast$.F\+I\+TS image data into a Mat array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{screen__io_8h_aaf693ea7543a226d961723b9edc66f65}\label{screen__io_8h_aaf693ea7543a226d961723b9edc66f65}} 
+\index{screen\_io.h@{screen\_io.h}!readmap@{readmap}}
+\index{readmap@{readmap}!screen\_io.h@{screen\_io.h}}
+\doxysubsubsection{\texorpdfstring{readmap()}{readmap()}}
+{\footnotesize\ttfamily void readmap (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{Mat \&}]{cv\+\_\+image }\end{DoxyParamCaption})}
+
+
+
+Function for importing $\ast$.F\+I\+TS image data into a Mat array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & Filename of F\+I\+T\+S-\/image to import \\
+\hline
+\mbox{\texttt{ out}}  & {\em cv\+\_\+image} & Mat object for storing F\+I\+TS image (can be empty, returns type C\+V64\+F\+C1) \\
+\hline
+\end{DoxyParams}

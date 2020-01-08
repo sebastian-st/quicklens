@@ -1,0 +1,93 @@
+\hypertarget{classinvert__cc__map}{}\doxysection{invert\+\_\+cc\+\_\+map Class Reference}
+\label{classinvert__cc__map}\index{invert\_cc\_map@{invert\_cc\_map}}
+
+
+Class for Open\+CV parallelization\+: Invert the critical curve map of a lens to derive its caustics.  
+
+
+
+
+Inheritance diagram for invert\+\_\+cc\+\_\+map\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classinvert__cc__map__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for invert\+\_\+cc\+\_\+map\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classinvert__cc__map__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classinvert__cc__map_ac5610a6075907f0ee5a997bab7b0ea9d}{invert\+\_\+cc\+\_\+map}} (\mbox{\hyperlink{classlensT}{lensT}} $\ast$lens\+\_\+)
+\item 
+virtual void \mbox{\hyperlink{classinvert__cc__map_a9f8a00783c0a9c7b428198fa0dfd24bf}{operator()}} (const cv\+::\+Range \&range) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlensT}{lensT}} $\ast$ \mbox{\hyperlink{classinvert__cc__map_a3389ec0a11442043adc702939192348d}{lens}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for Open\+CV parallelization\+: Invert the critical curve map of a lens to derive its caustics. 
+
+Definition at line 187 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classinvert__cc__map_ac5610a6075907f0ee5a997bab7b0ea9d}\label{classinvert__cc__map_ac5610a6075907f0ee5a997bab7b0ea9d}} 
+\index{invert\_cc\_map@{invert\_cc\_map}!invert\_cc\_map@{invert\_cc\_map}}
+\index{invert\_cc\_map@{invert\_cc\_map}!invert\_cc\_map@{invert\_cc\_map}}
+\doxysubsubsection{\texorpdfstring{invert\_cc\_map()}{invert\_cc\_map()}}
+{\footnotesize\ttfamily invert\+\_\+cc\+\_\+map\+::invert\+\_\+cc\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlensT}{lensT}} $\ast$}]{lens\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lens\+\_\+} & Lens whose cc\+\_\+map and caustic\+\_\+map we are referring to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classinvert__cc__map_a9f8a00783c0a9c7b428198fa0dfd24bf}\label{classinvert__cc__map_a9f8a00783c0a9c7b428198fa0dfd24bf}} 
+\index{invert\_cc\_map@{invert\_cc\_map}!operator()@{operator()}}
+\index{operator()@{operator()}!invert\_cc\_map@{invert\_cc\_map}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual void invert\+\_\+cc\+\_\+map\+::operator() (\begin{DoxyParamCaption}\item[{const cv\+::\+Range \&}]{range }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Perform raytracing to map from lens plane to source plane. Leave out interpolation to save runtime (this leads to a slightly coarser result)
+
+Definition at line 198 of file renderer.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classinvert__cc__map_a3389ec0a11442043adc702939192348d}\label{classinvert__cc__map_a3389ec0a11442043adc702939192348d}} 
+\index{invert\_cc\_map@{invert\_cc\_map}!lens@{lens}}
+\index{lens@{lens}!invert\_cc\_map@{invert\_cc\_map}}
+\doxysubsubsection{\texorpdfstring{lens}{lens}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlensT}{lensT}}$\ast$ invert\+\_\+cc\+\_\+map\+::lens\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 190 of file renderer.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{renderer_8cpp}{renderer.\+cpp}}\end{DoxyCompactItemize}
