@@ -47,6 +47,14 @@ Have fun!
 
 The code itself is documented in "doc" (auto-generated using doxygen).
 
+## Limitations
+
+- Please pay attention to finite area effects at the boundaries. If the lens convergence does not fall off quickly towards the image boundaries (e.g. if there are multiple highly extended lenses or a smooth mass distribution over the entire image), the missing information can affect the accuracy in the calculation of the deflection.
+
+- Note also that in this regard, special attention has to be paid to the definition of the deflection angle and the difference it makes whether a lensing halos is isolated or embedded in a multi-halo environment. Even for comparably large inter-halo-distances, the latter can produce an additional component in the deflection angle that increases quadratically on average (as one would expect for a constant density background, see e.g. Narayan & Bartelmann 1996).
+
+- The program uses discrete Fourier methods to approximate the superposition. In theory, this could introduce tiny unwanted noise on top of the deflection or the critical curves. Please pay attention to this effect.
+
 ## Science FAQ
 
 - **What is gravitational lensing?**
