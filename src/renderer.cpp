@@ -64,12 +64,12 @@ class Parallel_renderer : public cv::ParallelLoopBody
 					int rel_j = j - lens.get_origin()[0];
 
 					// First consider the overlays (if these sum to 255, can skip raytracing)
-					int overlay_sum = 0;
+					unsigned overlay_sum = 0;
 					bool is_caustic_pixel = false;
 					if (show_overlays and lens.contains(j, i))
 					{
 						// Check if pixel coincides with a CC of the lens
-						int cc_px_value = show_cc ? lens.get_cc().at<uchar>(rel_i, rel_j) : 0;
+						unsigned cc_px_value = show_cc ? lens.get_cc().at<uchar>(rel_i, rel_j) : 0;
 						if (show_cc and cc_px_value > 0)
 						{	
 							/**
@@ -104,7 +104,7 @@ class Parallel_renderer : public cv::ParallelLoopBody
 						// Add lens convergence to overlays
 						if (show_lens)
 						{
-							int kappa8u = lens.get_kappa8u().at<uchar>(rel_i, rel_j);
+							unsigned kappa8u = lens.get_kappa8u().at<uchar>(rel_i, rel_j);
 							overlay_sum += kappa8u;
 						}
 					}
@@ -139,9 +139,9 @@ class Parallel_renderer : public cv::ParallelLoopBody
 					 * pixel belongs to a caustic, in which case it has already been set)
 					 */
 					if (!is_caustic_pixel)
-						for (int c = 0; c < 3; ++c)
+						for (size_t c = 0; c < 3; ++c)
 						{
-							int final_val = lensedRGB.at<Vec3b>(i,j)[c] + overlay_sum;
+							unsigned final_val = lensedRGB.at<Vec3b>(i,j)[c] + overlay_sum;
 							if (final_val > 255)
 								finalRGB.at<Vec3b>(i,j)[c] = 255;
 							else
@@ -198,21 +198,26 @@ class invert_cc_map : public cv::ParallelLoopBody
 		virtual void operator()(const cv::Range &range) const
 		{
 			int width = lens->caustic_map.cols;
+			int height = lens->caustic_map.rows;
+
 			for (int i = range.start; i < range.end; ++i)
 				for (int j = 0; j < width; ++j)
 				{
-					/**
-					 * Perform raytracing to map from lens plane to source plane.
-					 * Leave out interpolation to save runtime 
-					 * (this leads to a slightly coarser result)
-					 */
+					// Perform raytracing to map from lens plane to source plane.
 					double beta1, beta2;
 					lens->raytrace_pixel(j, i, j, i, 1., beta1, beta2);
 					int b1 = static_cast<int>(beta1+0.5);
 					int b2 = static_cast<int>(beta2+0.5);
 
-					if (lens->cc_map.at<uchar>(i, j) > 0)
+					if (lens->cc_map.at<uchar>(i, j) > 0 and 0 <= b1 and b1 < width and 0 <= b2 and b2 < height)
+					{
 						lens->caustic_map.at<uchar>(b2, b1) = 255;
+
+						// Compromise between interpolation, runtime and a reasonable line thickness: perform dilation with a "half" kernel (0,1,0) (1,1,0) (0,0,0)
+						int low[2] = {relocate(b1-1, width), relocate(b2-1, height)};
+						lens->caustic_map.at<uchar>(low[1], b1) = 255;
+						lens->caustic_map.at<uchar>(b2, low[0]) = 255;
+					}
 
 				}
 		}

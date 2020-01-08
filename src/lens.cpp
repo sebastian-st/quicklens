@@ -326,10 +326,10 @@ cv::Vec3b sourceT::get_linear_interpolated_pixel(double beta1, double beta2)
 	double rel_beta2 = beta2 - origin[1];
 	double fl1 = floor(rel_beta1);
 	double fl2 = floor(rel_beta2);
-	int low1 = relocate(fl1, w);
-	int low2 = relocate(fl2, h);
-	int up1 = relocate(fl1+1., w);
-	int up2 = relocate(fl2+1., h);
+	unsigned low1 = relocate(fl1, w);
+	unsigned low2 = relocate(fl2, h);
+	unsigned up1 = relocate(fl1+1., w);
+	unsigned up2 = relocate(fl2+1., h);
 	double x = rel_beta1 - fl1;
 	double y = rel_beta2 - fl2;
 	double xy = x*y;
@@ -341,12 +341,12 @@ cv::Vec3b sourceT::get_linear_interpolated_pixel(double beta1, double beta2)
 	double c11 = xy;
 
 	// Perform linear interpolated raytracing for each channel R,G,B
-	for (int c = 0; c < 3; ++c)
+	for (size_t c = 0; c < 3; ++c)
 	{
-		int I00 = channels[c].at<uchar>(low2, low1);
-		int I01 = channels[c].at<uchar>(low2, up1);
-		int I10 = channels[c].at<uchar>(up2, low1);
-		int I11 = channels[c].at<uchar>(up2, up1);
+		unsigned I00 = channels[c].at<uchar>(low2, low1);
+		unsigned I01 = channels[c].at<uchar>(low2, up1);
+		unsigned I10 = channels[c].at<uchar>(up2, low1);
+		unsigned I11 = channels[c].at<uchar>(up2, up1);
 		val_to_show[c] = I00*c00 + I01*c01 + I10*c10 + I11*c11;
 	}
 
