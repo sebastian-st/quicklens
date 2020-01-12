@@ -2,6 +2,7 @@
 #define LENS_CPP
 
 #include <array> // std::array
+#include <cmath> // floor
 #include <opencv2/core/core.hpp>
 #include "math.cpp"
 #include "renderer.cpp"

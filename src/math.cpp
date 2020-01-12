@@ -2,6 +2,7 @@
 #define MATH_CPP
 
 #include <iostream> // std::count
+#include <cmath>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
