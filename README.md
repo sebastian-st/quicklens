@@ -47,7 +47,7 @@ Have fun!
 
 ## Documentation
 
-The code itself is documented in "doc" (auto-generated using doxygen).
+A rudimentary documentation of the code is available in "doc" (auto-generated using doxygen).
 
 ## Limitations
 
