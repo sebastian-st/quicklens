@@ -43,6 +43,8 @@ Please note:
 
 Have fun!
 
+![Image](http://sebastian.stapelberg.de/documents/quicklens_bg.jpg "Image")
+
 ## Documentation
 
 The code itself is documented in "doc" (auto-generated using doxygen).
