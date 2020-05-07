@@ -1,6 +1,6 @@
 ### Standard settings ###
 TARGET	= lens
-SRC	= src/main.cpp
+SRC	= src/main.cpp src/math.cpp src/renderer.cpp src/screen_io.cpp src/lens.cpp
 CXX	= g++
 SHELL	= /bin/sh
 

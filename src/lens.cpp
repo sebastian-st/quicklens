@@ -1,11 +1,10 @@
-#ifndef LENS_CPP
-#define LENS_CPP
-
+#include <iostream> // std::cout
 #include <array> // std::array
 #include <cmath> // floor
 #include <opencv2/core/core.hpp>
-#include "math.cpp"
-#include "renderer.cpp"
+
+#include "math.h"
+#include "renderer.h"
 #include "lens.h"
 
 using cv::Mat;
@@ -355,4 +354,3 @@ cv::Vec3b sourceT::get_linear_interpolated_pixel(double beta1, double beta2)
 }
 
 
-#endif

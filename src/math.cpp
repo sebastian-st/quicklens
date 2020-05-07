@@ -1,10 +1,9 @@
-#ifndef MATH_CPP
-#define MATH_CPP
-
 #include <iostream> // std::count
 #include <cmath>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+
+#include "math.h"
 
 using cv::Mat;
 
@@ -133,11 +132,6 @@ void fill_green_fct(Mat &green_fct)
 }
 
 
-// Define enum for direction of image translations
-enum Direction{
-    ShiftUp=1, ShiftRight, ShiftDown, ShiftLeft
-   };
-
 /**
  * Shift all pixel coordinates by N pixels into given direction (required for finite differentiation)
  *
@@ -244,4 +238,3 @@ double calculate_median(Mat img_orig)
         return flat[flat.size() / 2]; 
 }
 
-#endif

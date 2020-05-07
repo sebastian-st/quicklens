@@ -18,7 +18,7 @@
 // Custom resources
 #include "lens.h"
 #include "screen_io.h"
-#include "renderer.cpp"
+#include "renderer.h"
 
 using cv::Mat;
 using cv::Vec3b;

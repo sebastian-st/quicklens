@@ -18,10 +18,17 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
+// Libraries needed for handling the FITS file format
+#if HAS_CCFITS == TRUE
+#include <CCfits/CCfits>
+#include <valarray>
+#endif
+
 // Project includes
-#include "math.cpp" 	// Auxiliary functions
-#include "lens.cpp" 	// Physical objects
-#include "screen_io.cpp"// Screen rendering, file I/O
+#include "math.h" 	// Auxiliary functions
+#include "lens.h" 	// Physical objects
+#include "screen_io.h"	// Screen + file I/O
+#include "renderer.h"	// Parallel rendering
 
 /** 
  * Main function: Load image and perform all the necessary calculations that can be done beforehand 
